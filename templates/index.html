@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="icon" type="image/x-icon" href="../static/e2.png">
+    <title>Book Recommendation System</title>
+    <script src="https://kit.fontawesome.com/5f3f547070.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Yatra+One&display=swap" rel="stylesheet">
+  </head>
+  <style>
+    body{
+      margin: 0;
+		padding: 0;
+		background-image: url('https://images.theconversation.com/files/45159/original/rptgtpxd-1396254731.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=1356&h=668&fit=crop');
+		background-size: cover;
+    }
+    textarea{
+      margin-top: 1rem;;
+      border:solid 5px red;
+      text-align: center;
+      font-size: 1rem;;
+    }
+    textarea:hover{
+      box-shadow: 0px 4px 20px 20px wheat;
+    }
+    .submit{
+      padding: 1rem;
+      font-size: 1rem;
+      background-color:darksalmon;
+      border:solid 5px brown;
+      color: brown;
+    }
+    .submit:hover{
+      background-color:brown;
+      color: white;
+      
+    }
+    h1{
+      font-size: 2rem;;
+    }
+  </style>
+  <body>
+   
+    <!--Website Title -->
+    <center style="padding: 5rem;;">
+    <div class="container">
+      <h1 class='container-heading'><span class="heading_font text-white"><b style="color: antiquewhite;"><u>Book </span>Recommendation System</u></b></h2>
+      <div class="description">
+        <p2></p2>
+      </div>
+    </div>
+    
+
+    <!--TextArea -->
+    <div>
+      <form action="{{ url_for('predict') }}" class="ml-container" method="POST">
+        <textarea name="message" font-size="20" class="message-box" rows="8" cols="80"placeholder="Enter a book that you already read.."></textarea>
+        <br><br>
+        <input type="submit"  class="my-cta-button submit" value="Recommend">
+      </form>
+    </div>
+  </span>
+</h1>
+</center>
+  </body>
+</html>
