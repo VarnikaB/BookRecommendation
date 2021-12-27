@@ -54,7 +54,7 @@
     <!--TextArea -->
     <div>
       <form action="{{ url_for('predict') }}" class="ml-container" method="POST">
-        <textarea name="message" font-size="20" class="message-box" rows="8" cols="80"placeholder="Enter a book that you already read.."></textarea>
+        <textarea name="message" font-size="20" class="message-box" rows="8" cols="80"placeholder="Enter a book that you already read.." required></textarea>
         <br><br>
         <input type="submit"  class="my-cta-button submit" value="Recommend">
       </form>

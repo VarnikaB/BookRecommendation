@@ -3,6 +3,8 @@ import numpy as np
 import pickle
 import re
 from scipy.sparse import csr_matrix
+from google_book_api import list_books
+
 
 knnmodel = pickle.load(open('knn-model','rb'))
 pickle.dump(knnmodel,open('knn-model','wb'))
@@ -20,11 +22,18 @@ def recommendation_knn(book_name):
     distances,suggestions=knnmodel.kneighbors(book_pivot.iloc[book_id,:].values.reshape(1,-1),n_neighbors = 11)    
     
     books=[]
+    links = []
     for i in range(len(suggestions)):
         if i==0:
             print("The suggestions for ",book_name,"are : ")
         if not i:
             books = book_pivot.index[suggestions[i]]
     for i in range(1,len(books)):
+         t = list_books(books[i])
+         link_name = t['items'][0]['volumeInfo']['previewLink']
+         links.append(link_name)
+         
          recommend_books.append(books[i] )
-    return recommend_books 
+    print(links)
+    print(recommend_books)
+    return recommend_books, links
